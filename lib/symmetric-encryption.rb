@@ -4,7 +4,9 @@ require 'symmetric_encryption/symmetric_encryption'
 require 'symmetric_encryption/reader'
 require 'symmetric_encryption/writer'
 require 'zlib'
-# attr_encrypted and Encrypted validator
+if defined?(Rails)
+  require 'symmetric_encryption/rails'
+end
 if defined?(ActiveRecord::Base)
   require 'symmetric_encryption/extensions/active_record/base'
 end
